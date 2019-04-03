@@ -207,8 +207,14 @@ def re_search(company):
 import sqlite3
 import webbrowser
 import re 
-conn = sqlite3.connect('C:\\Users\\Phantom\\My_Progect\\Lucretia\\moex.db')
-cursor = conn.cursor()
+#'C:\\my_progect\\mmvb_analysis.git\\moex.db'
+link = 'moex.db'
+try:
+    conn = sqlite3.connect(link)
+    cursor = conn.cursor()
+except:
+    print("ошибка подключения к базе данных")
+
 
 while 1:
     print ("search поиск информации о компании")
